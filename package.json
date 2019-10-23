@@ -1,0 +1,26 @@
+{
+  "name": "cliptool",
+  "version": "1.0.0",
+  "description": "A Cross-platform clipboard manager",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sljeff/cliptool.git"
+  },
+  "keywords": [
+    "clipboard"
+  ],
+  "author": "sljeff",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/sljeff/cliptool/issues"
+  },
+  "homepage": "https://github.com/sljeff/cliptool#readme",
+  "devDependencies": {
+    "electron": "^7.0.0"
+  }
+}
