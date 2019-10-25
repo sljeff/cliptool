@@ -2,7 +2,7 @@
   "name": "cliptool",
   "version": "1.0.0",
   "description": "A Cross-platform clipboard manager",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
