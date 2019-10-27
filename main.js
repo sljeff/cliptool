@@ -1,23 +1,32 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, shell } = require('electron')
 
 let win
 
 function createWindow () {
-  // 创建浏览器窗口
   win = new BrowserWindow({
     width: 800,
     height: 600,
+    title: "Cliptool - Cross platform clipboard manager",
+    autoHideMenuBar: true,
     webPreferences: {
       nodeIntegration: true
     }
   })
 
-  // 加载index.html文件
   win.loadFile('index.html')
 
   win.on('closed', () => {
     win = null
   })
+
+  win.webContents.on('new-window', function(e, url) {
+    e.preventDefault();
+    shell.openExternal(url);
+  })
+
+  win.removeMenu()
+
+  // win.webContents.on("devtools-opened", () => { win.webContents.closeDevTools() })
 }
 
 app.on('ready', createWindow)
@@ -28,7 +37,7 @@ app.on('window-all-closed', () => {
   }
 })
 
-// 点击dock栏
+// click from dock
 app.on('activate', () => {
   if (win === null) {
     createWindow()

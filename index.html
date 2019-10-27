@@ -2,13 +2,48 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
-    <script src="./js/index.js"></script>
+    <title>Cliptool - Cross platform clipboard manager</title>
+    <link rel="stylesheet" type="text/css" href="./css/pure-min.css">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chrome <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+    <div class="pure-g" id="main">
+      <div class="pure-u-6-24" id="menu">
+        <ul class="pure-menu-list">
+          <li class="pure-menu-item"><a class="pure-menu-link" href="#preference">Preference</a></li>
+          <li class="pure-menu-item"><a class="pure-menu-link" href="#clipboard">Clipboard</a></li>
+          <li class="pure-menu-item pure-menu-selected"><a class="pure-menu-link" href="#about">About</a></li>
+        </ul>
+      </div>
+      <div class="pure-u-17-24" id="content">
+        <div id="preference" style="display: none;">
+          <form action="none" class="pure-form">
+            <div class="pure-control-group">
+              <label for="max-history">Max history</label>
+              <input type="number" name="max-history" id="max-history" value="15" class="pure-input-rounded">
+            </div>
+            <div class="pure-control-group">
+              <label for="startup">
+                  Open on startup<input type="checkbox" id="startup">
+              </label>
+            </div>
+            <div class="pure-control-group"></div>
+            <div class="pure-control-group"></div>
+            <div class="pure-control-group"></div>
+          </form>
+        </div>
+        <div id="clipboard" style="display: none;">
+        </div>
+        <div id="about" style="display: none;">
+          <h1>Cliptool</h1>
+          <a id="github" href="https://github.com/sljeff/cliptool" target="_blank">Github</a><br>
+          <p>v1.0.0</p>
+        </div>
+      </div>
+    </div>
   </body>
+  <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/index.js"></script>
+  <script>if (window.module) module = window.module;</script>
 </html>

@@ -1,0 +1,32 @@
+:not(input):not(textarea),
+:not(input):not(textarea)::after,
+:not(input):not(textarea)::before {
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+input, button, textarea, :focus {
+    outline: none;
+}
+
+#menu {
+    border-right-style: solid;
+    border-right-color: gray;
+    min-height: 100vh;
+}
+
+#menu ul {
+    padding-top: 2vh;
+}
+
+#menu ul li {
+    border-bottom-style: solid;
+    border-bottom-color: lightgray;
+    border-bottom-width: 1px;
+}
+
+#content div {
+    text-align: center;
+    padding-top: 2vh;
+}
