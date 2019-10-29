@@ -1,7 +1,12 @@
 $(document).ready(function(){
+    // refresh tab
     var hash = '#preference'
     $(location).attr('hash', hash)
     switchTab(hash)
+
+    // register setting form
+
+    // register clipboard
 })
 
 $(window).on('hashchange', function(e){
@@ -10,10 +15,17 @@ $(window).on('hashchange', function(e){
 })
 
 function switchTab(hash){
-    $('div#content>div').hide()
-    $(`div#content>div${hash}`).show()
+    $('div#mainpage>div').hide()
+    $(`div#mainpage>div${hash}`).show()
 
-    $('#menu>ul>li').removeClass('pure-menu-selected')
+    $('#menu>ul>li').removeClass('is-active')
     var liSelected = $(`#menu>ul>li>a[href="${hash}"]`).parent()
-    liSelected.addClass('pure-menu-selected')
+    liSelected.addClass('is-active')
+}
+
+function chooseDir(){
+    const { dialog  } = require('electron').remote
+    var path = dialog.showOpenDialog({
+        properties: ['openDirectory']
+    })
 }

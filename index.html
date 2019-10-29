@@ -2,45 +2,130 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cliptool - Cross platform clipboard manager</title>
-    <link rel="stylesheet" type="text/css" href="./css/pure-min.css">
+    <link rel="stylesheet" type="text/css" href="./css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="./css/index.css">
   </head>
   <body>
-    <div class="pure-g" id="main">
-      <div class="pure-u-6-24" id="menu">
-        <ul class="pure-menu-list">
-          <li class="pure-menu-item"><a class="pure-menu-link" href="#preference">Preference</a></li>
-          <li class="pure-menu-item"><a class="pure-menu-link" href="#clipboard">Clipboard</a></li>
-          <li class="pure-menu-item pure-menu-selected"><a class="pure-menu-link" href="#about">About</a></li>
-        </ul>
-      </div>
-      <div class="pure-u-17-24" id="content">
-        <div id="preference" style="display: none;">
-          <form action="none" class="pure-form">
-            <div class="pure-control-group">
-              <label for="max-history">Max history</label>
-              <input type="number" name="max-history" id="max-history" value="15" class="pure-input-rounded">
+    <section class="section has-background-white-bis">
+      <div class="container" id="container">
+
+        <div class="tabs is-toggle is-centered" id="menu">
+          <ul>
+            <li class="is-active"><a href="#preference">Preference</a></li>
+            <li><a href="#clipboard">Clipboard</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </div>
+
+        <div id="mainpage">
+          <div id="preference" class="columns is-mobile" style="display: none;">
+            <div class="column box is-10 is-offset-1">
+
+              <div class="field is-horizontal">
+                <div class="field-label">
+                  <label class="label">Max history</label>
+                </div>
+                <div class="field-body">
+                  <div class="field">
+                    <div class="control">
+                      <input type="number" class="input" name="max-history" id="max-history" placeholder="15">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                  <label class="label">Backup directory</label>
+                </div>
+                <div class="field-body">
+                  <div class="field">
+                    <div class="content">
+                      <small>Cliptool appends clipboard history to <b>backup.txt</b></small>
+                      <div class="control">
+                        <button class="button is-primary is-outlined" id="backup-chooser">Choose directory</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                  <label class="label">Open on Startup</label>
+                </div>
+                <div class="field-body">
+                  <div class="field">
+                    <button class="button is-primary">Enabled</button>
+                  </div>
+                </div>
+              </div>
+
+	      <div class="field is-grouped-centered is-grouped">
+                <button class="button is-danger is-rounded is-large">Save</button>
+              </div>
+
             </div>
-            <div class="pure-control-group">
-              <label for="startup">
-                  Open on startup<input type="checkbox" id="startup">
-              </label>
+          </div>
+
+          <div id="clipboard" class="columns is-mobile" style="display: none;">
+            <div id="about" class="column box is-10 is-offset-1">
+              <table class="table is-hoverable">
+                <tbody>
+                  <tr>
+                    <th>1</th>
+		    <td>这里有非常非常长的一条记录肯定不可能显示的下所以需要支持点开的功能这里有非常非常长的一条记录肯定不可能显示的下所以需要支持点开的功能这里有非常非常长的一条记录肯定不可能显示的下所以需要支持点开的功能这里有非常非常长的一条记录肯定不可能显示的下所以需要支持点开的功能这里有非常非常长的一条记录肯定不可能显示的下所以需要支持点开的功能</td>
+		    <td><button class="button is-small">delete</button></td>
+                  </tr>
+                  <tr>
+                    <th>2</th>
+		    <td>这一条就比较短</td>
+		    <td><button class="button is-small">delete</button></td>
+                  </tr>
+                  <tr>
+                    <th>3</th>
+		    <td>image</td>
+		    <td><button class="button is-small">delete</button></td>
+                  </tr>
+                  <tr>
+                    <th>4</th>
+		    <td>image</td>
+		    <td><button class="button is-small">delete</button></td>
+                  </tr>
+                  <tr>
+                    <th>5</th>
+		    <td>TabNine was unable to start the html semantic completion backend.</td>
+		    <td><button class="button is-small">delete</button></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <div class="pure-control-group"></div>
-            <div class="pure-control-group"></div>
-            <div class="pure-control-group"></div>
-          </form>
-        </div>
-        <div id="clipboard" style="display: none;">
-        </div>
-        <div id="about" style="display: none;">
-          <h1>Cliptool</h1>
-          <a id="github" href="https://github.com/sljeff/cliptool" target="_blank">Github</a><br>
-          <p>v1.0.0</p>
+          </div>
+
+          <div id="about" class="columns is-mobile" style="display: none;">
+            <div class="column box content is-10 is-offset-1 has-text-centered">
+              <h1>Cliptool</h1>
+	      <p>
+	      Default hotkey: Cmd+Option+v
+	      </p>
+              <small>v1.0.0</small>
+              <small><a id="github" href="https://github.com/sljeff/cliptool" target="_blank">Github</a></small>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+
+      <div class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <textarea class="textarea"></textarea>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+      </div>
+
+    </section>
   </body>
   <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
   <script src="./js/jquery.min.js"></script>
