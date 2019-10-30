@@ -4,10 +4,13 @@ let win
 
 function createWindow () {
   win = new BrowserWindow({
+    minWidth: 500,
+    minHeight: 600,
     width: 500,
     height: 600,
     title: "Cliptool - Cross platform clipboard manager",
     autoHideMenuBar: true,
+    titleBarStyle: 'hiddenInset',
     webPreferences: {
       nodeIntegration: true
     }

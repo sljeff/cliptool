@@ -10,6 +10,27 @@ input, button, textarea :focus {
     outline: none;
 }
 
+body {
+    -webkit-app-region: drag;
+}
+
+li, div.column {
+    -webkit-app-region: no-drag;
+}
+
 section {
     min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+div#history-table {
+    height: 70vh;
+    overflow: auto;
 }
