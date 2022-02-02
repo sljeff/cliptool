@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/sljeff/cliptool#readme",
   "devDependencies": {
-    "electron": "^16.0.6"
+    "electron": "^17.0.0"
   }
 }
